@@ -1,26 +1,25 @@
-# [deployable-dns](https://github.com/deployable/deployable-dns)
+# [@deployable/dns](https://github.com/deployable/node/deployable-dns)
 
-Custom DNS server
+Custom DNS server, allows configuration of hosts and responses
 
 ### Install
  
-    npm install deployable-dns --save
+    npm install @deployable/dns --save
 
-    yarn add deployable-dns
+    yarn add @deployable/dns
 
 ### Usage
 
 ```javascript
 
-const deployable-dns = require('deployable-dns')
-deployable-dns.demo()
+const server = require('@deployable/dns')
 
 ```
 
 ### License
 
-deployable-dns is released under the MIT license.
-Copyright 2016 Matt Hoyle <code at deployable.co>
+@deployable/dns is released under the MIT license.
+Copyright 2016 Matt Hoyle - code aat deployable.co
 
-https://github.com/deployable/deployable-dns
+https://github.com/deployable/node-deployable-dns
 
