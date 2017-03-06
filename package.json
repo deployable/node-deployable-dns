@@ -1,0 +1,40 @@
+{
+  "name": "deployable-dns",
+  "version": "0.1.0",
+  "description": "Custom DNS server",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha",
+    "test:unit": "mocha test/unit_*_spec.js",
+    "test:int": "mocha test/int_*_spec.js",
+    "test:watch": "mocha --reporter min -w test/unit_*_spec.js test/int_*_spec.js",
+    "test:debug": "DEBUG='*' mocha debug",
+    "test:coverage": "istanbul cover _mocha && istanbul check-coverage",
+    "test:gulp": "gulp --gulpfile test/fixture/module/gulpfile.js build",
+    "release:test": "set -uex; npm test; npm version prerelease; npm publish --tag testing",
+    "release:patch": "set -uex; rm -rf node_modules; yarn install; yarn test; yarn run test:coverage; npm version patch; git push; npm publish; git push --tags;"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deployable/node-deployable-dns.git"
+  },
+  "keywords": [
+    "deployable",
+    "module"
+  ],
+  "author": "Matt Hoyle <code at deployable.co>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deployable/node-deployable-dns/issues"
+  },
+  "homepage": "https://github.com/deployable/node-deployable-dns#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2",
+    "sinon": "^1.17.6"
+  },
+  "dependencies": {
+    "debug": "^2",
+    "dnsd": "^0.9.6"
+  }
+}
