@@ -4,4 +4,5 @@ yarn-error.log
 test/output
 pkg/
 tmp/
+coverage/
 
