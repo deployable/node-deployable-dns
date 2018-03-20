@@ -17,7 +17,7 @@ cd "$rundir"
 
 run_build() {
   #package
-  build_one
+  run_build_one
 }
 
 # Build the base image
@@ -31,10 +31,10 @@ run_build_one() {
 }
 
 run_rebuild(){
-  build
-  stop
-  remove
-  run
+  run_build
+  run_stop
+  run_remove
+  run_run
 }
 
 # Pull base image
@@ -86,6 +86,8 @@ case $cmd in
   "build")                  run_build_one "$@";;
   "rebuild")                run_rebuild "$@";;
   "run")                    run_run "$@";; 
+  "rm")                     run_remove "$@";; 
+  "stop")                   run_stop "$@";; 
   "publish")                run_publish "$@";; 
 
   '-h'|'--help'|'h'|'help') run_help;;
