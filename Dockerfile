@@ -1,12 +1,10 @@
-from mhart/alpine-node:6.11.0
+FROM node:8-alpine
 
-arg key
+WORKDIR /app
+ADD package.json yarn.lock /app/
+RUN yarn install --production
+ADD . /app
 
-add package.json /
-run npm install -d --production
-add . /
-
-env DEBUG='dply:dnsd:*'
-#cmd ["node","lib/dnsd.js"]
-cmd npm start
+ENV DEBUG='dply:dnsd:*'
+CMD ["node","/app/lib/dnsd.js"]
 
