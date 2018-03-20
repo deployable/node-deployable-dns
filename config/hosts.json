@@ -5,22 +5,7 @@
       "ipv6": "2001:0db8:0000:0042:0000:8a2e:0370:7334"
     },
     "reqrewr.redirect": {
-      "redirect": "mail.postfixtest.local"
-    },
-    "time4.google.com": {
-      "redirect": "3.au.pool.ntp.org"
-    },
-    "time3.google.com": {
-      "redirect": "3.au.pool.ntp.org"
-    },
-    "time2.google.com": {
-      "redirect": "3.au.pool.ntp.org"
-    },
-    "time1.google.com": {
-      "redirect": "3.au.pool.ntp.org"
-    },
-    "pool.ntp.org": {
-      "redirect": "au.pool.ntp.org"
+      "redirect": "other.host"
     }
   }
 }
