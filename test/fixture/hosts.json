@@ -3,6 +3,9 @@
     "something.com": {
       "ip": "127.0.0.1",
       "ipv6": "2001:0db8:0000:0042:0000:8a2e:0370:7334" 
+    },
+    "redirect.to": {
+      "redirect": "1.au.pool.ntp.org"
     }
   }
 }

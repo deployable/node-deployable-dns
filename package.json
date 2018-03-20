@@ -4,6 +4,7 @@
   "description": "Custom DNS server",
   "main": "lib/index.js",
   "scripts": {
+    "start": "node lib/index.js",
     "test": "mocha",
     "test:unit": "mocha test/unit_*_spec.js",
     "test:int": "mocha test/int_*_spec.js",
@@ -29,13 +30,15 @@
   },
   "homepage": "https://github.com/deployable/node-deployable-dns#readme",
   "devDependencies": {
-    "chai": "^3.5.0",
+    "chai": "^4.1.2",
     "istanbul": "^0.4.5",
-    "mocha": "^3.1.2",
-    "sinon": "^1.17.6"
+    "mocha": "^5.0.4"
   },
   "dependencies": {
-    "debug": "^2",
-    "dnsd": "^0.9.6"
+    "@deployable/log": "^0.3.2",
+    "debug": "^3.1.0",
+    "dnsd": "^0.9.6",
+    "largs": "^0.2.0",
+    "lodash": "^4.17.4"
   }
 }
