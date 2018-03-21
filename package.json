@@ -1,17 +1,18 @@
 {
   "name": "@deployable/dns",
-  "version": "0.0.0",
-  "description": "Custom DNS server",
+  "version": "0.1.0",
+  "description": "DNS server",
   "main": "lib/index.js",
   "scripts": {
     "start": "node lib/index.js",
-    "test": "mocha",
-    "test:unit": "mocha test/unit_*_spec.js",
-    "test:int": "mocha test/int_*_spec.js",
-    "test:watch": "mocha --reporter min -w test/unit_*_spec.js test/int_*_spec.js",
+    "test": "mocha test/unit test/int",
+    "test:unit": "mocha test/unit",
+    "test:int": "mocha test/int",
+    "test:watch": "nodemon -x mocha --reporter min --bail test/unit test/int",
     "test:debug": "DEBUG='*' mocha debug",
     "test:coverage": "istanbul cover _mocha && istanbul check-coverage",
-    "test:gulp": "gulp --gulpfile test/fixture/module/gulpfile.js build",
+    "test:dns": "dig @localhost asdfqwer.qwerasdf.zxcv",
+    "watch": "nodemon -i dnsd.pid",
     "release:test": "set -uex; npm test; npm version prerelease; npm publish --tag testing --access public",
     "release:patch": "set -uex; rm -rf node_modules; yarn install; yarn test; yarn run test:coverage; npm version patch; git push; npm publish --access public; git push --tags;"
   },
@@ -23,7 +24,7 @@
     "deployable",
     "module"
   ],
-  "author": "Matt Hoyle <code at deployable.co>",
+  "author": "Matt Hoyle <code tat deployable.co>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/deployable/node-deployable-dns/issues"
@@ -31,15 +32,15 @@
   "homepage": "https://github.com/deployable/node-deployable-dns#readme",
   "devDependencies": {
     "chai": "^4.1.2",
-    "istanbul": "^0.4.5",
-    "mocha": "^5.0.4"
+    "mocha": "^5.0.4",
+    "nyc": "^11.6.0"
   },
   "dependencies": {
     "@deployable/log": "^0.3.2",
     "bluebird": "^3.5.1",
     "debug": "^3.1.0",
     "dnsd": "^0.9.6",
-    "largs": "^0.2.0",
+    "largs": "^0.4.1",
     "lodash": "^4.17.4"
   }
 }

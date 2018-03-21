@@ -5,5 +5,5 @@ test/output
 pkg/
 tmp/
 coverage/
-started
 config/hosts.json.local
+dnsd.pid

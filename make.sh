@@ -13,7 +13,9 @@ rundir=$(cd -P -- "$(dirname -- "$0")" && printf '%s\n' "$(pwd -P)")
 canonical="$rundir/$(basename -- "$0")"
 cd "$rundir"
 
+
 ###
+
 
 run_build() {
   #package
@@ -23,7 +25,7 @@ run_build() {
 # Build the base image
 run_build_one() {
   local tag=${1:-latest}
-#    --build-arg YARN_VERSION=${YARN_VERSION} \
+  #--build-arg YARN_VERSION=${YARN_VERSION} \
   docker build \
     --file $rundir/Dockerfile \
     --tag $IMAGE_REPO:${tag} \
@@ -74,8 +76,10 @@ run_publish_docker(){
 ###
 
 run_help(){
+  set +x
   echo "Commands:"
-  awk '/  ".*"/{ print "  "substr($1,2,length($1)-3) }' make.sh
+  # Wait for the `case`, after that print out any `"commands")` and the underlying command/function
+  awk '!f && /^case \$cmd/ { f=1 } f && /  ".*")/ { printf("  %-26s  %s\n", substr($1,2,length($1)-3), $2); }' $canonical
 }
 
 cmd=build # Set a default but check $1
