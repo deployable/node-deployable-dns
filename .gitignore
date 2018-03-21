@@ -5,5 +5,6 @@ test/output
 pkg/
 tmp/
 coverage/
+.nyc_output/
 config/hosts.json.local
 dnsd.pid

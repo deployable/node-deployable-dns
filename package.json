@@ -1,6 +1,6 @@
 {
   "name": "@deployable/dns",
-  "version": "0.1.0",
+  "version": "0.1.0-0",
   "description": "DNS server",
   "main": "lib/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "test:int": "mocha test/int",
     "test:watch": "nodemon -V -x 'mocha --reporter min --bail test/unit test/int || exit 1'",
     "test:debug": "DEBUG='*' mocha debug",
-    "test:coverage": "istanbul cover _mocha && istanbul check-coverage",
+    "test:coverage": "nyc _mocha test/unit test/int && nyc report -r html && nyc check-coverage",
     "test:dns": "dig @localhost asdfqwer.qwerasdf.zxcv",
     "watch": "nodemon -i dnsd.pid",
     "release:test": "set -uex; npm test; npm version prerelease; npm publish --tag testing --access public",

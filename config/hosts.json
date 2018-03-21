@@ -4,8 +4,14 @@
       "ip": "127.0.0.1",
       "ipv6": "2001:0db8:0000:0042:0000:8a2e:0370:7334"
     },
-    "reqrewr.redirect": {
-      "redirect": "other.host"
+    "redirect.host.reqrewr": {
+      "redirect": "ipv4only.host.reqrewr"
+    },
+    "ipv4only.host.reqrewr": {
+      "ip": "127.0.0.2"
+    },
+    "ipv6only.host.reqrewr": {
+      "ipv6": "2001:0db8:0000:0042:0000:8a2e:0370:7334"
     }
   }
 }
