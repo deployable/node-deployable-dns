@@ -31,4 +31,3 @@ writeFile(__dirname+'/../dnsd.pid', process.pid, function(){})
     process.exit(1)
   })
 
-module.exports = { argv, server }

@@ -8,7 +8,7 @@
     "test": "mocha test/unit test/int",
     "test:unit": "mocha test/unit",
     "test:int": "mocha test/int",
-    "test:watch": "nodemon -x mocha --reporter min --bail test/unit test/int",
+    "test:watch": "nodemon -V -x 'mocha --reporter min --bail test/unit test/int || exit 1'",
     "test:debug": "DEBUG='*' mocha debug",
     "test:coverage": "istanbul cover _mocha && istanbul check-coverage",
     "test:dns": "dig @localhost asdfqwer.qwerasdf.zxcv",
