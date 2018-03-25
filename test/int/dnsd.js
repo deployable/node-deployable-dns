@@ -36,17 +36,17 @@ describe('Int::dnsd::server', function(){
         server.close()
     })
 
-    it('should response to ipv4 request', function(){
+    it('should respond to ipv4 request', function(){
         return resolve4('asdfqwer.qwerasdf.zxcv').then(res => expect(res).to.eql([ '127.0.0.1' ]))
     })
 
-    it('should response to ipv6 request', function(){
+    it('should respond to ipv6 request', function(){
         return resolve6('asdfqwer.qwerasdf.zxcv').then(res => expect(res).to.eql([
             '2001:db8:0:42:0:8a2e:370:7334'
         ]))
     })
 
-    it('should response to redirect request', function(){
+    it('should respond to redirect request', function(){
         return resolve4('redirect.host.reqrewr').then(res => expect(res).to.eql([
             '127.0.0.2'
         ]))
@@ -70,7 +70,7 @@ describe('Int::dnsd::server', function(){
             .catch(err => expect(err.code).to.equal('ENODATA'))
     })
 
-    it('should response to a deny request', function(){
+    it('should respond to a deny request', function(){
         return resolve4('deny.reqrewr')
             .then(()=> expect.fail('should nodata'))
             .catch(err => expect(err.code).to.equal('ENODATA'))
